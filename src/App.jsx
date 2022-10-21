@@ -174,15 +174,16 @@ function App() {
 
           <div class={styles.Block}>
             <h2>Styles</h2>
-            <pre>{"style={ '--my-custom-color': themeColor()"}</pre>
+            <pre>{"style={'--my-custom-color': themeColor()}"}</pre>
             <pre>{"class={styles.Block}"}</pre>
             <pre>{`width: ${num()}`}</pre>
             <pre>{"classList={{selected: current() === 'foo'}}"}</pre>
 
             <div
               style={{
-                backgroundColor: "red",
-                width: num(),
+                "background-color": "red",
+                width: `${num()}px`,
+                height: "20px",
               }}
             ></div>
 
@@ -191,6 +192,45 @@ function App() {
               src="src/assets/info.svg"
               onClick={() => showPortal("styles")}
             ></img>
+          </div>
+
+          <div class={styles.Block}>
+            <h2>Refs</h2>
+            <pre>{"<div ref={myDiv}>My Element</div>"}</pre>
+            <pre>{"ref={el => /* Сделать что-либо с el... */}"}</pre>
+            <img
+              class={styles.Icon}
+              src="src/assets/info.svg"
+              onClick={() => showPortal("refs")}
+            ></img>
+          </div>
+
+          <div class={styles.Block}>
+            <h2>Spread props</h2>
+            <pre>{"<Info {...props} />"}</pre>
+            <img
+              class={styles.Icon}
+              src="src/assets/info.svg"
+              onClick={() => showPortal("spread")}
+            ></img>
+          </div>
+
+          <div class={styles.Block}>
+            <h2>In the next part, we will see</h2>
+            <p>Directives</p>
+            <p>Default props</p>
+            <p>Splitting props</p>
+            <p>Children</p>
+            <p>Nested reactivity</p>
+            <p>Stores</p>
+            <p>Stores mutation</p>
+            <p>Stores context</p>
+            <p>Immutable stores</p>
+            <p>Batching updates</p>
+            <p>Untrack signal change</p>
+            <p>On signal change</p>
+            <p>Lazy components</p>
+            <p>Resourses</p>
           </div>
         </div>
 

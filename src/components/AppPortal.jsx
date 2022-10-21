@@ -1,4 +1,4 @@
-import { Portal, For, Show, style } from "solid-js/web";
+import { Portal, For, Show } from "solid-js/web";
 
 export const AppPortal = (props) => {
   return (
