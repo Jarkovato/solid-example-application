@@ -21,19 +21,27 @@ import { portalDictionary } from "./helpers/portal";
 
 // signal (get(), set())
 const [count, setCount] = createSignal(0);
+
 const increment = () => {
   setCount(count() + 1);
 };
 
 // effect
-createEffect(() => console.log("Last count value", count()));
+createEffect(() => {
+  console.log(count());
+  if (count() === 6) {
+    alert("count", count());
+  }
+});
 
 // memo
 const toSquare = (val) => val * val;
+
 const square = createMemo(() => {
   return toSquare(count());
 });
 
+// for
 const [cats, setCats] = createSignal([
   { id: "J---aiyznGQ", name: "Keyboard Cat" },
   { id: "z_AbfPXTKms", name: "Maru" },
@@ -160,7 +168,7 @@ function App() {
           </div>
 
           <div class={styles.Block}>
-            <h2>Actions</h2>
+            <h2>Events</h2>
             <pre>{"<div onMouseMove={handleMouseMove}>"}</pre>
             <pre>{"<button on:DOMContentLoaded={() => {}} />"}</pre>
             <pre>{"<button onClick={[handler, data]}/>"}</pre>
@@ -231,6 +239,8 @@ function App() {
             <p>On signal change</p>
             <p>Lazy components</p>
             <p>Resourses</p>
+            <p>Suspense</p>
+            <p>Transitions</p>
           </div>
         </div>
 
